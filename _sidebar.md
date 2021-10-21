@@ -13,6 +13,7 @@
   - [smp_afinity](Performance/smp_afinity.md)
   - [RPS_RFS](Performance/RFS_RPS.md)
   
+- [安卓问题](Android/Android_issues.md)
 
 - AboutMe
 
