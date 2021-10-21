@@ -15,6 +15,6 @@
   
 - [安卓问题](Android/Android_issues.md)
 
-- AboutMe
+- [FAQ](FrequentlyAsk/DNS-Ubuntu.md)
 
-	- [WhoAmI](about.md)
+- [AboutMe](about.md)
