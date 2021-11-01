@@ -17,9 +17,16 @@
 	
 	onSetupConnectionCompleted received DataCallResponse: DataCallResponse: {version=11 status=0 retry=-1 cid=1 active=1 type=IP ifname=ppp0 mtu=1500 addresses=[10.192.223.115/32] dnses=[100.100.2.136,100.100.2.138] gateways=[0.0.0.0] pcscf=[]}
 
+### SELINUX
+
+	android, SELinux, avc: denied, audit
+
+
 ## 常见问题1
 
 没有设备节点
+
+和selinux有关。
 
 	10-21 15:23:23.808 D/RIL RILU( 1773): find /sys/bus/usb/devices/1-1:1.4/usbmisc/cdc-wdm0
 	10-21 15:23:23.808 D/RIL RILU( 1773): qmichannel = cdc-wdm0
@@ -42,6 +49,7 @@
 	10-21 15:23:23.809 E/RIL RILU( 1773):          // ignore other USB events
 	10-21 15:23:23.809 E/RIL RILU( 1773):          return;
 
+
 ## 常见问题2 
 
 - 拿到ip地址了，不能上网.
@@ -49,8 +57,11 @@
 	更新qmi_wwan
 
 
-# 常见问题3 
+## 常见问题3 
 
 - Q:安卓11 图标不对。
 
 	更新ril库。
+
+## 
+
