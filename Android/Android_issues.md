@@ -3,11 +3,19 @@
 
 ## 关键字搜索
 
+获取运营商信息
+
+	onRequest: OPERATOR
+
+拨号
 	onRequest: SETUP_DATA_CALL
 
 	requestSetPreferredNetworkType PREF_NET_TYPE_LTE_GSM_WCDMA
 
+	DcActivatingState: msg={ what=EVENT_SETUP_DATA_CONNECTION_DONE
+		
 	
+	onSetupConnectionCompleted received DataCallResponse: DataCallResponse: {version=11 status=0 retry=-1 cid=1 active=1 type=IP ifname=ppp0 mtu=1500 addresses=[10.192.223.115/32] dnses=[100.100.2.136,100.100.2.138] gateways=[0.0.0.0] pcscf=[]}
 
 ## 常见问题1
 

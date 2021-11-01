@@ -1,4 +1,4 @@
-- [Introductions](/)
+- [**Introductions**](/)
 
 - USB
 
@@ -13,8 +13,8 @@
   - [smp_afinity](Performance/smp_afinity.md)
   - [RPS_RFS](Performance/RFS_RPS.md)
   
-- [安卓问题](Android/Android_issues.md)
+- [**安卓问题**](Android/Android_issues.md)
 
-- [FAQ](FrequentlyAsk/DNS-Ubuntu.md)
+- [**FAQ**](FrequentlyAsk/DNS-Ubuntu.md)
 
-- [AboutMe](about.md)
+- [**AboutMe**](about.md)
