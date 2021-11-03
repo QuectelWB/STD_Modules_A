@@ -20,6 +20,9 @@
  - [网络编程接口](Coding/if.md)
  - [built-in驱动的处理](Coding/built-in.md)
 
-* [**FAQ**](FrequentlyAsk/DNS-Ubuntu.md)
+* FAQ
+
+ - [FAQ](FrequentlyAsk/DNS-Ubuntu.md)
+ - [ipv6](FrequentlyAsk/IPv6.md)
 
 * [**AboutMe**](about.md)
