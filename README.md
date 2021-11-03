@@ -9,7 +9,7 @@
 无线通信技术方案供应商。
 
 
-![](https://www.quectel.com/images/about/ban2.png)
+![](mm.jpg)
 
 
 

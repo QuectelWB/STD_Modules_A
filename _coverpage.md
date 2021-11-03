@@ -1,4 +1,4 @@
-<img width="600px"  src="mm.jpg">
+<img width="600px"  src="QuectelLogo.png">
 
 # Quectel标准模组使用指南
 
