@@ -12,41 +12,41 @@ APIC表示高级可编程中断控制器（Advanced Programmable Interrupt Contr
 - SMP_AFFINITY文件:在/proc/irq/{IRQ}/目录下都有一个smp_affinity文件，这个文件中，所表示的CPU核心以十六进制来表示的。
 
 ## 1、查找硬件IRQ号
-
-[root@wmstianjin16172 ~]# cat /proc/interrupts 
-           CPU0       CPU1 ...       CPU10      CPU11      
-  0:        151          0 ...          0          0  IR-IO-APIC-edge      timer
-  4:          1          0 ...          0          0  IR-IO-APIC-edge    
-  8:         65          0 ...          0          0  IR-IO-APIC-edge      rtc0
-  9:   14986870          0 ...          0          0  IR-IO-APIC-fasteoi   acpi
- 16:         26          0 ...          0          0  IR-IO-APIC-fasteoi   ehci_hcd:usb1
- 23:        711          0 ...          0          0  IR-IO-APIC-fasteoi   ehci_hcd:usb2
- 48:          0          0 ...          0          0  DMAR_MSI-edge      dmar0
-                            …………
- 74:          0          0 ...          0          0  IR-PCI-MSI-edge      ahci
- 75:          1          0 ...          0          0  IR-PCI-MSI-edge      eth0
- 76:    1008671   86184098 ...   34556579          0  IR-PCI-MSI-edge      eth0-TxRx-0
- 77:    1821647      29869 ...      63607          0  IR-PCI-MSI-edge      eth0-TxRx-1
- 78:         10       8431 ...  211622276          0  IR-PCI-MSI-edge      eth0-TxRx-2
- 79:         10          0 ...          0  360545261  IR-PCI-MSI-edge      eth0-TxRx-3
- 80:   77837858  229674917 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-4
- 81:  184905831   70950472 ...    4972306          0  IR-PCI-MSI-edge      eth0-TxRx-5
- 82:  112830765   16260506 ...  128387722          0  IR-PCI-MSI-edge      eth0-TxRx-6
- 83:         10          0 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-7
-NMI:       1547        678 ...        493        698   Non-maskable interrupts
-LOC:  424126712  457610969 ...  289672679  301760023   Local timer interrupts
-SPU:          0          0 ...          0          0   Spurious interrupts
-PMI:       1547        678 ...        493        698   Performance monitoring interrupts
-IWI:          0          0 ...          0          0   IRQ work interrupts
-RES:  387358708  463695594 ...  111027119   98766294   Rescheduling interrupts
-CAL:       3009       5228 ...       5265       5278   Function call interrupts
-TLB:    1432171    1441738 ...    3160227    2003518   TLB shootdowns
-TRM:          0          0 ...          0          0   Thermal event interrupts
-THR:          0          0 ...          0          0   Threshold APIC interrupts
-MCE:          0          0 ...          0          0   Machine check exceptions
-MCP:      22452      22452 ...      22452      22452   Machine check polls
-ERR:          0            
-MIS:          0            
+	
+	[root@wmstianjin16172 ~]# cat /proc/interrupts 
+		   CPU0       CPU1 ...       CPU10      CPU11      
+	  0:        151          0 ...          0          0  IR-IO-APIC-edge      timer
+	  4:          1          0 ...          0          0  IR-IO-APIC-edge    
+	  8:         65          0 ...          0          0  IR-IO-APIC-edge      rtc0
+	  9:   14986870          0 ...          0          0  IR-IO-APIC-fasteoi   acpi
+	 16:         26          0 ...          0          0  IR-IO-APIC-fasteoi   ehci_hcd:usb1
+	 23:        711          0 ...          0          0  IR-IO-APIC-fasteoi   ehci_hcd:usb2
+	 48:          0          0 ...          0          0  DMAR_MSI-edge      dmar0
+				    …………
+	 74:          0          0 ...          0          0  IR-PCI-MSI-edge      ahci
+	 75:          1          0 ...          0          0  IR-PCI-MSI-edge      eth0
+	 76:    1008671   86184098 ...   34556579          0  IR-PCI-MSI-edge      eth0-TxRx-0
+	 77:    1821647      29869 ...      63607          0  IR-PCI-MSI-edge      eth0-TxRx-1
+	 78:         10       8431 ...  211622276          0  IR-PCI-MSI-edge      eth0-TxRx-2
+	 79:         10          0 ...          0  360545261  IR-PCI-MSI-edge      eth0-TxRx-3
+	 80:   77837858  229674917 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-4
+	 81:  184905831   70950472 ...    4972306          0  IR-PCI-MSI-edge      eth0-TxRx-5
+	 82:  112830765   16260506 ...  128387722          0  IR-PCI-MSI-edge      eth0-TxRx-6
+	 83:         10          0 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-7
+	NMI:       1547        678 ...        493        698   Non-maskable interrupts
+	LOC:  424126712  457610969 ...  289672679  301760023   Local timer interrupts
+	SPU:          0          0 ...          0          0   Spurious interrupts
+	PMI:       1547        678 ...        493        698   Performance monitoring interrupts
+	IWI:          0          0 ...          0          0   IRQ work interrupts
+	RES:  387358708  463695594 ...  111027119   98766294   Rescheduling interrupts
+	CAL:       3009       5228 ...       5265       5278   Function call interrupts
+	TLB:    1432171    1441738 ...    3160227    2003518   TLB shootdowns
+	TRM:          0          0 ...          0          0   Thermal event interrupts
+	THR:          0          0 ...          0          0   Threshold APIC interrupts
+	MCE:          0          0 ...          0          0   Machine check exceptions
+	MCP:      22452      22452 ...      22452      22452   Machine check polls
+	ERR:          0            
+	MIS:          0            
 
 
 ## 2、修改/proc/irq/{IRQ}/smp_affinity
@@ -91,16 +91,16 @@ MIS:          0
 
 确定网卡是否支持多队列:
 
-cat /proc/interrupts |grep eth0
- 75:          1          0 ...          0          0  IR-PCI-MSI-edge      eth0
- 76:    1008671   86184098 ...   34556579          0  IR-PCI-MSI-edge      eth0-TxRx-0
- 77:    1821647      29869 ...      63607          0  IR-PCI-MSI-edge      eth0-TxRx-1
- 78:         10       8431 ...  211622276          0  IR-PCI-MSI-edge      eth0-TxRx-2
- 79:         10          0 ...          0  360545261  IR-PCI-MSI-edge      eth0-TxRx-3
- 80:   77837858  229674917 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-4
- 81:  184905831   70950472 ...    4972306          0  IR-PCI-MSI-edge      eth0-TxRx-5
- 82:  112830765   16260506 ...  128387722          0  IR-PCI-MSI-edge      eth0-TxRx-6
- 83:         10          0 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-7
+	cat /proc/interrupts |grep eth0
+	 75:          1          0 ...          0          0  IR-PCI-MSI-edge      eth0
+	 76:    1008671   86184098 ...   34556579          0  IR-PCI-MSI-edge      eth0-TxRx-0
+	 77:    1821647      29869 ...      63607          0  IR-PCI-MSI-edge      eth0-TxRx-1
+	 78:         10       8431 ...  211622276          0  IR-PCI-MSI-edge      eth0-TxRx-2
+	 79:         10          0 ...          0  360545261  IR-PCI-MSI-edge      eth0-TxRx-3
+	 80:   77837858  229674917 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-4
+	 81:  184905831   70950472 ...    4972306          0  IR-PCI-MSI-edge      eth0-TxRx-5
+	 82:  112830765   16260506 ...  128387722          0  IR-PCI-MSI-edge      eth0-TxRx-6
+	 83:         10          0 ...          0          0  IR-PCI-MSI-edge      eth0-TxRx-7
 
 
 ## 使用总结
