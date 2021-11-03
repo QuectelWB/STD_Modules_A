@@ -2,16 +2,14 @@
 
 ----------
 
+![](mm.jpg)
+
+
 **移远标准模组使用指南**
 
 ## Quectel ##
 
 无线通信技术方案供应商。
-
-
-![](mm.jpg)
-
-
 
 ## What is Quectel Modules ##
 
