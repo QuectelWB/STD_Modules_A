@@ -11,7 +11,7 @@
 	
 	ip -6 address add x:x:x::x/64 dev eth1
 	
-	ip -6 address add default via x:x:x::x dev eth1
+	ip -6 route add default via x:x:x::x dev eth1
 
 和IPv4 的指令差不多
 
