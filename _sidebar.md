@@ -3,7 +3,7 @@
 * USB
 
   - [authorized](USB/USB_authorized.md)
-
+  - [枚举](USB/UsbEnumeration.md)
 * PCI
 
   - [PCI driver](PCI/How_to_write_pci_driver.md)
