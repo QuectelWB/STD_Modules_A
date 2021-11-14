@@ -4,6 +4,7 @@
 
   - [authorized](USB/USB_authorized.md)
   - [枚举](USB/UsbEnumeration.md)
+
 * PCI
 
   - [PCI driver](PCI/How_to_write_pci_driver.md)
@@ -23,6 +24,7 @@
 * FAQ
 
  - [FAQ](FrequentlyAsk/DNS-Ubuntu.md)
+ - [Ubuntu的DNS](FrequentlyAsk/DNS-Ubuntu.2.md)
  - [ipv6](FrequentlyAsk/IPv6.md)
 
 * [**AboutMe**](about.md)
