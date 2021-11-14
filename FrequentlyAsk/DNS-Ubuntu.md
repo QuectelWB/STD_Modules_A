@@ -9,10 +9,10 @@ https://blog.csdn.net/u011700186/article/details/109452561
 实际使用没有效果
 	systemd-resolve --interface eth0 --set-dns 8.8.8.8 --set-dns 114.114.114.114
 
+### 查看DNS服务状态
 
-1、查看 DNS 服务状态
-
-systemd-resolve --status
+> systemd-resolve --status
+<br>
 示例：
 	
 	$ systemd-resolve --status
