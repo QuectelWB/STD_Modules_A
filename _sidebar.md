@@ -16,6 +16,8 @@
   
 * [**安卓问题**](Android/Android_issues.md)
 
+  - [关于飞行模式](Android/AirplaneMode.md)
+
 * 代码部分
 
  - [网络编程接口](Coding/if.md)
