@@ -28,4 +28,13 @@ Links:
 *[`Forums`](https://Forums.quectel.com/ "Forums")*
 <br>
 *[`中文论坛`](https://forumschinese.quectel.com/ "中文论坛")*
+<br>
+https://docs.sixfab.com/docs/getting-started-with-base-hat-and-quectel-ec25-eg25-module
+<br>
+https://projects.osmocom.org/projects/quectel-modems/wiki/EC25
+<br>
+https://projects.osmocom.org/projects/quectel-modems/wiki/Standalone_modems
+<br>
+
+<br>
 
