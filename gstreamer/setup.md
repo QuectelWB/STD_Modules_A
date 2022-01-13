@@ -9,4 +9,4 @@
 	autopoint libtool gtk-doc-tools libgstreamer1.0-dev
 
 	
-	
+https://blog.csdn.net/zong596568821xp/article/details/80306987	
