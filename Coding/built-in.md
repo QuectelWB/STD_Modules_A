@@ -45,7 +45,8 @@ m：模块会被编译，但是不会被编译到内核中，只是生成.o文�
 
             说明:以上代码使用bool来定义一个宏,表示此驱动只能直接编译至内核（用*选择）或不编译（不选），不能编制至/lib/modules/下（用M选择）。
      
-     第三步：修改drivers/char/Makefile文件
+
+- 第三步：修改drivers/char/Makefile文件
             在适当位置加入下面一行代码：
 
              obj-$(CONFIG_LEDC)  +=  ledc.o
