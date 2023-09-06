@@ -1,0 +1,21 @@
+ avc: denied { read } for comm="android.hardwar" name="u:object_r:hwservicem    anager_prop:s0" dev="tmpfs" ino=2441 scontext=u:r:sensors_service_ql:s0 tcontext=u:object_r:hwservicemanager_prop:s0 tclass=file permissive=0
+
+
+
+#============= gnss_service_ql ==============
+allow gnss_service_ql hwservicemanager_prop:file read;
+
+#============= platform_app ==============
+allow platform_app system_prop:property_service set;
+
+
+ avc: denied { read } for comm="android.hardwar" name="u:object_r:hwservicem    anager_prop:s0" dev="tmpfs" ino=2441 scontext=u:r:sensors_service_ql:s0 tcontext=u:object_r:hwservicemanager_prop:s0 tclass=file permissive=0
+
+#============= sensors_service_ql ==============
+allow sensors_service_ql hwservicemanager_prop:file read;
+
+#============= system_suspend ==============
+allow system_suspend sysfs:dir read;
+allow system_suspend sysfs_power:dir read;
+
+
