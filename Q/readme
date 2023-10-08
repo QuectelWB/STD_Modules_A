@@ -1,0 +1,18 @@
+
+sudo apt install texlive-xetex
+
+
+https://www.cnpython.com/pypi/markdown2pdf
+
+pip install markdown2pdf
+
+export  PATH=$PATH:/home/bw/.local/bin
+
+/home/bw/.local/bin/md2pdf
+
+markddown -> docx
+
+pandoc xxx.md -s -o xxxx.docx
+
+
+

@@ -1,0 +1,2 @@
+09-07 20:11:59.713   399   399 I auditd  : type=1400 audit(0.0:1775): avc: denied { write } for comm="l26_service" name="/" dev="dm-6" ino=3 scontext=u:r:l26_service:s0 tcontext=u:object_r:system_data_root_file:s0 tclass=dir permissive=0
+

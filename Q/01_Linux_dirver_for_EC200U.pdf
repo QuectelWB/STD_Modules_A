@@ -1,0 +1,101 @@
+Linux Drivers
+
+## Applicable to
+
+Those Quectel modem shares the same USB VID/PID <2C7C/0901>
+
+EC200U
+
+EC600U
+
+EC800U
+
+EG912U
+
+EG915U
+
+
+## OverView
+
+Quectel no need to provide any linux driver source code for those modem. What we need is follow the guide to modify the Linux Source code and add the kernel configs.
+
+USB is a kind of hierarchical bus structure. The data transmission between USB devices and the host is realized by the USB controller. Linux 
+USB host driver comprises three parts: USB host controller driver, USB core and USB device drivers. 
+
+USB host controller, at the bottom of the hierarchical structure, is a USB driver which directly interacts with the hardware. 
+
+USB core, the core of the whole USB host driver, is used for managing USB bus, USB bus devices and USB bus bandwidth; it provides the interfaces for USB device drivers, through which the applications can access the USB system files.
+
+USB device drivers interact with the applications and provide the interfaces for accessing specific USB devices.
+
+## USB Serial Option Driver
+
+Once the module loads the USB serial option driver successfully, the device files named ttyUSB0, ttyUSB1, ttyUSB2 and so on are created in directory /dev.
+
+To identify the module, add the module VID and PID information to the [KERNEL]/drivers/usb/serial/option.c.
+
+```
+      static const struct usb_device_id option_ids[] = { 
+      #if 1 //Added by Quectel 
+           { USB_DEVICE_INTERFACE_CLASS(0x2C7C, 0x0901, 0xff) },
+      #endif 
+```
+
+
+Make sure you have added the kernel configuration:
+
+      CONFIG_USB_SERIAL
+      CONFIG_USB_SERIAL_WWAN
+      CONFIG_USB_SERIAL_OPTION
+
+
+## USBNet
+
+The Quectel modem supports ECM/RNDIS. 
+**Notice: It does not support QMI and MBIM.
+
+Normally there is of no need to modify the source code of the usbnet driver, you just need to enable the configuration items.
+
+```
+      CONFIG_USB_NET_DRIVERS
+      CONFIG_USB_USBNET
+      // for ECM
+      CONFIG_USB_NET_CDCETHER
+      // for RNDIS
+      CONFIG_USB_NET_RNDIS_HOST
+
+
+## Support PPP
+
+Before using PPP function, you need to enable the following configuration items to configure the kernel to
+support PPP.
+
+```
+        CONFIG_PPP
+        CONFIG_PPP_ASYNC
+        CONFIG_PPP_SYNC_TTY
+        CONFIG_PPP_DEFLATE
+```
+
+
+## How to check the driver
+
+
+
+
+
+
+
+
+## Test AT 
+
+
+
+## Test PPP
+
+
+
+## Test ECM or RNDIS 
+
+
+

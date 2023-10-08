@@ -26,14 +26,18 @@
 	lrwx------ 1 root root 64 Aug 24 21:54 9 -> 'socket:[30453899]'
 
 
+    
+    root@ll:/buildroot/quec/tools/qlog# fuser /dev/cdc-wdm0
 
-root@ll:/buildroot/quec/tools/qlog# fuser /dev/cdc-wdm0
-/dev/cdc-wdm0:       969483
-root@ll:/buildroot/quec/tools/qlog# pgrep ModemManager
-969210
-root@ll:/buildroot/quec/tools/qlog# ps -efl | grep -i 969483
-0 S root      969483       1  0  80   0 - 61202 do_pol 21:39 ?        00:00:00 /usr/libexec/mbim-proxy
-0 S root      988564  967668  0  80   0 -  4434 pipe_r 21:58 pts/13   00:00:00 grep --color=auto -i 969483
+    /dev/cdc-wdm0:       969483
+    root@ll:/buildroot/quec/tools/qlog# pgrep ModemManager
+
+    969210
+
+    root@ll:/buildroot/quec/tools/qlog# ps -efl | grep -i 969483
+
+    0 S root      969483       1  0  80   0 - 61202 do_pol 21:39 ?        00:00:00 /usr/libexec/mbim-proxy
+    0 S root      988564  967668  0  80   0 -  4434 pipe_r 21:58 pts/13   00:00:00 grep --color=auto -i 969483
 
 不是ModemManager 直接打开QMI/MBIM节点的，而是这个 mbim-proxy
 

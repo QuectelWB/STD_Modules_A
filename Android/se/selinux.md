@@ -176,4 +176,13 @@ make  selinux_policy_nonsystem  -j8  // 只修改 vendor相关的sepolicy
 /vendor/etc/selinux/vendor_sepolicy.cil
 
 
+## 处理 neverallow
+
+http://jackou.top/2021/08/18/Selinux%E8%A7%84%E5%88%99%E7%94%9F%E6%88%90%EF%BC%8C%E9%85%8D%E7%BD%AE%EF%BC%8C%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3neverallow%E6%96%B9%E6%B3%95/
+
+
+## 添加自定义native 服务
+
+https://juejin.cn/post/7216942649068830777
+
 
