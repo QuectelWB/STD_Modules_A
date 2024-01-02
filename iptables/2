@@ -1,0 +1,10 @@
+禁止来自10.66.40.11的所有的tcp访问
+但是解除22端口的方法
+
+
+--->
+
+ iptables -t filter -I INPUT  -s 10.66.40.11 -p tcp -j DROP
+
+ iptables -t filter -I INPUT  -s 10.66.40.11 -p tcp --dport 22  -j ACCEPT
+

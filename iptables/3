@@ -1,0 +1,17 @@
+删除规则
+
+root@m-K501LB:/data/STD_Modules_A/iptables# iptables -t filter -nvL
+Chain INPUT (policy ACCEPT 685 packets, 77927 bytes)
+ pkts bytes target     prot opt in     out     source               destination
+   21  4630 ACCEPT     tcp  --  *      *       10.66.40.11          0.0.0.0/0            tcp dpt:22
+    4   240 DROP       tcp  --  *      *       10.66.40.11          0.0.0.0/0
+  217 18228 DROP       icmp --  *      *       10.66.40.11          0.0.0.0/0            icmptype 8
+
+删除第三条
+ iptables -t  filter -D INPUT 3
+
+删除INPUT链所有规则
+iptables -t filter -F INPUT 
+
+
+

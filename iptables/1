@@ -1,0 +1,43 @@
+<1>屏蔽来自10.66.40.11的ssh登录
+
+<2>屏蔽来自ip地址10.66.40.11 的ping报文
+
+
+
+
+在INPUT链中增加一条规则
+-I INPUT 		INPUT链
+-j DROP                	动作
+-s			源地址
+
+	iptables -t filter -I INPUT  -s 10.66.40.11 -j DROP
+
+但是这样做，ssh 也无法登录了
+
+应该在INPUT链中的tcp 端口 22 屏蔽掉
+
+--dport 22
+
+
+
+
+	iptables -t filter -I INPUT  -s 10.66.40.11  -m tcp --dport 22   -j DROP
+
+
+------------
+
+ iptables -t filter -I INPUT  -s 10.66.40.11 -p icmp    -j DROP
+
+ iptables -A INPUT -p icmp --icmp-type echo-request -s 10.66.40.11 -j DROP
+
+
+root@m-K501LB:/data/STD_Modules_A/iptables# tcpdump -i eth0 | grep 10.66.40.11
+tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
+listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
+14:28:01.023212 IP 10.66.40.11 > 10.66.40.25: ICMP echo request, id 16, seq 85, length 64
+14:28:02.047182 IP 10.66.40.11 > 10.66.40.25: ICMP echo request, id 16, seq 86, length 64
+14:28:03.071303 IP 10.66.40.11 > 10.66.40.25: ICMP echo request, id 16, seq 87, length 64
+14:28:04.095149 IP 10.66.40.11 > 10.66.40.25: ICMP echo request, id 16, seq 88, length 64
+
+
+
